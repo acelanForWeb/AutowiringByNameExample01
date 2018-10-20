@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<!-- 當Customer類別中的屬性名稱與bean的id名稱相符合時，及自動注入其bean -->
+	<bean id="customer" class="tw.acelan.common.Customer" autowire="byName" />
+	
+	<!-- DI精確寫法 -->
+	<!--  
+	<bean id="customer" class="tw.acelan.common.Customer">
+		 <property name="address" ref="skillBean" />
+	</bean>
+	-->
+	
+	<bean id="address" class="tw.acelan.common.Address">
+		<property name="fulladdress" value="台北市信義區" />
+	</bean>
+
+</beans>
